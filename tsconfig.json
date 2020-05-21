@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es6",
+        "declaration": true,
+        "outDir": "dist",
+        "rootDir": "src",
+        "lib": [
+            "dom",
+            "es2020"
+        ],
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedParameters": true,
+        "downlevelIteration": true,
+        "strict": true,
+        "jsx": "react"
+    },
+    "exclude": [
+        "dist",
+        "tests",
+        "stories",
+        "node_modules",
+        "webpack.config.ts"
+    ]
+}

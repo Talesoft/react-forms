@@ -1,0 +1,11 @@
+/node_modules
+/src
+/tests
+/jest.config.js
+/.eslintrc.js
+/.prettierrc.js
+/.idea
+/.travis.yml
+/CONTRIBUTING.md
+/LICENSE.md
+/tsconfig.json
