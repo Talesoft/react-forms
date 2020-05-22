@@ -1,7 +1,19 @@
 {
     "name": "@talesoft/react-forms",
-    "description": "",
-    "keywords": [],
+    "description": "A form handling library for React that is built to be blazing fast with many fields",
+    "keywords": [
+        "react",
+        "form",
+        "field",
+        "fast",
+        "performance",
+        "performant",
+        "array",
+        "forms",
+        "formik",
+        "immutablejs",
+        "immutable.js"
+    ],
     "version": "0.1.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
