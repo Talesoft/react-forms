@@ -24,6 +24,17 @@ Features
 - All HTML inputs available as fully integrated and easy to use components.
 - Validation in-built, validator-agnostic.
 
+Install
+-------
+
+Use NPM to install the package
+
+```bash
+npm i @talesoft/react-forms
+```
+
+TypeScript typings are included (No `@types/*` package needed)
+
 How to use it
 -------------
 
