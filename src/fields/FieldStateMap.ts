@@ -1,4 +1,4 @@
-import FormFieldStateRecord from './FormFieldStateRecord'
+import FormFieldStateRecord from './FieldStateRecord'
 import { Map } from 'immutable'
 
 type FormFieldStateMap = Map<string, FormFieldStateRecord>

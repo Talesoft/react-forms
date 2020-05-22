@@ -1,13 +1,13 @@
 import ValidationState from '../ValidationState'
-import FormFieldState from './FormFieldState'
+import FieldState from './FieldState'
 import { Record, List } from 'immutable'
 
 const createRecord = Record({
     errors: List(),
     validationState: ValidationState.NOT_VALIDATED,
     changed: false,
-} as Readonly<FormFieldState>)
+} as Readonly<FieldState>)
 
-export default function createInitialFormFieldState() {
+export default function createInitialFieldState() {
     return createRecord()
 }

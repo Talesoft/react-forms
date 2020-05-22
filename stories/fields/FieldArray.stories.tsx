@@ -5,13 +5,13 @@ import React, { useMemo, useEffect } from 'react'
 import { action } from '@storybook/addon-actions'
 import Form from '../../src/forms/Form'
 import InputField from '../../src/fields/InputField'
-import FormFieldArray from '../../src/fields/FormFieldArray'
+import FieldArray from '../../src/fields/FieldArray'
 import FormElement from '../../src/forms/FormElement'
 import useFormContext from '../../src/forms/useFormContext'
 
 export default {
     title: 'Form Field Array',
-    component: FormFieldArray,
+    component: FieldArray,
 }
 
 const ChangeWatcher = () => {
@@ -35,7 +35,7 @@ export const BasicArrayExample = () => {
             <Form initialValue={initialValue} onSubmit={action('submit')}>
                 <ChangeWatcher />
                 <FormElement>
-                    <FormFieldArray name="items">
+                    <FieldArray name="items">
                         {({ map, push, unshift }) => (
                             <>
                                 <button onClick={() => unshift({ title: '', finished: false })}>Prepend item</button>
@@ -61,7 +61,7 @@ export const BasicArrayExample = () => {
                                 <button onClick={() => push({ title: '', finished: false })}>Append item</button>
                             </>
                         )}
-                    </FormFieldArray>
+                    </FieldArray>
                     <div className="form-group">
                         <button className="btn btn-primary" type="submit">Submit</button>
                     </div>
@@ -78,12 +78,11 @@ export const StressTest = () => {
     return (
         <div className="container mt-5 mb-5">
             <Form initialValue={initialValue} onSubmit={action('submit')}>
-                <ChangeWatcher />
                 <FormElement>
-                    <FormFieldArray name="items">
+                    <FieldArray name="items">
                         {({ map, push, unshift }) => (
                             <>
-                                <button onClick={() => Array.from({ length: 50 }).forEach(() => unshift({ title: '', finished: false }))}>
+                                <button onClick={() => unshift(...Array.from({ length: 50 }, () => ({ title: '', finished: false })))} type="button">
                                     Prepend 50 items
                                 </button>
                                 {map(({ key, childName, remove }) => (
@@ -105,12 +104,12 @@ export const StressTest = () => {
                                         </div>
                                     </>
                                 ))}
-                                <button onClick={() => Array.from({ length: 500 }).forEach(() => push({ title: '', finished: false }))}>
+                                <button onClick={() => push(...Array.from({ length: 50 }, () => ({ title: '', finished: false })))} type="button">
                                     Append 50 items
                                 </button>
                             </>
                         )}
-                    </FormFieldArray>
+                    </FieldArray>
                     <div className="form-group">
                         <button className="btn btn-primary" type="submit">Submit</button>
                     </div>

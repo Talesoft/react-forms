@@ -1,7 +1,6 @@
 import FormStateDispatch from './FormStateDispatch'
 import FormStateRecord from './FormStateRecord'
 import FormOptions from './FormOptions'
-import parsePath from '../parsePath'
 import ValidationState from '../ValidationState'
 
 export default function createFormStateDispatchers<TValue>(
@@ -30,8 +29,7 @@ export default function createFormStateDispatchers<TValue>(
         dispatch({ type: 'unregisterField', path })
     }
     function getFieldValue(path: string) {
-        const pathArray = parsePath(path)
-        return state.get('value').getIn(pathArray)
+        return state.get('value').getIn(path.split('.'))
     }
     function setFieldValue(path: string, value: any) {
         dispatch({ type: 'setFieldValue', path, value })

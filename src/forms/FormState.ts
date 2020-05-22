@@ -1,5 +1,5 @@
 import ValidationState from '../ValidationState'
-import FormFieldStateMap from '../fields/FormFieldStateMap'
+import FieldStateMap from '../fields/FieldStateMap'
 import { Map } from 'immutable'
 
 export default interface FormState<TValue> {
@@ -8,5 +8,5 @@ export default interface FormState<TValue> {
     readonly submitting: boolean
     readonly submitted: boolean
     readonly validationState: ValidationState
-    readonly fieldStates: FormFieldStateMap
+    readonly fieldStates: FieldStateMap
 }

@@ -1,9 +1,8 @@
 import FormStateAction from './FormStateAction'
 import FormStateRecord from './FormStateRecord'
-import createInitialFormFieldState from '../fields/createInitialFormFieldState'
+import createInitialFieldState from '../fields/createInitialFieldState'
 import { List } from 'immutable'
 import ValidationState from '../ValidationState'
-import parsePath from '../parsePath'
 import createInitialFormState from './createInitialFormState'
 
 export default function reduceForm<TValue>(state: FormStateRecord<TValue>, action: FormStateAction) {
@@ -16,16 +15,14 @@ export default function reduceForm<TValue>(state: FormStateRecord<TValue>, actio
         case 'finishSubmit':
             return state.merge({ submitted: true, submitting: false })
         case 'setFieldValue':
-            const path = parsePath(action.path)
+            const path = action.path.split('.')
             return state
                 .update('value', value => value.setIn(path, action.value))
                 .update('fieldStates', fieldStates =>
                     fieldStates.update(action.path, fieldState => fieldState.set('changed', true)),
                 )
         case 'registerField':
-            return state.update('fieldStates', fieldStates =>
-                fieldStates.set(action.path, createInitialFormFieldState()),
-            )
+            return state.update('fieldStates', fieldStates => fieldStates.set(action.path, createInitialFieldState()))
         case 'unregisterField':
             return state.update('fieldStates', fieldStates => fieldStates.delete(action.path))
         case 'setFieldErrors':
