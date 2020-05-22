@@ -1,4 +1,4 @@
-import ValidationState from '../ValidationState'
+import ValidationState from './ValidationState'
 import { Record, Map, fromJS } from 'immutable'
 import FormState from './FormState'
 

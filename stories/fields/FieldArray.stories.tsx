@@ -28,7 +28,7 @@ export const BasicArrayExample = () => {
             { title: 'Buy eggs', finished: true },
             { title: 'Buy milk', finished: false },
             { title: 'Wash car', finished: false },
-        ]
+        ],
     }), [])
     return (
         <div className="container mt-5 mb-5">

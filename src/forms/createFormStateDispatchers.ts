@@ -1,7 +1,7 @@
 import FormStateDispatch from './FormStateDispatch'
 import FormStateRecord from './FormStateRecord'
 import FormOptions from './FormOptions'
-import ValidationState from '../ValidationState'
+import ValidationState from './ValidationState'
 
 export default function createFormStateDispatchers<TValue>(
     options: FormOptions<TValue>,

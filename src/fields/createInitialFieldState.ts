@@ -1,4 +1,4 @@
-import ValidationState from '../ValidationState'
+import ValidationState from '../forms/ValidationState'
 import FieldState from './FieldState'
 import { Record, List } from 'immutable'
 

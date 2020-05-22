@@ -2,7 +2,7 @@ import FormStateAction from './FormStateAction'
 import FormStateRecord from './FormStateRecord'
 import createInitialFieldState from '../fields/createInitialFieldState'
 import { List } from 'immutable'
-import ValidationState from '../ValidationState'
+import ValidationState from './ValidationState'
 import createInitialFormState from './createInitialFormState'
 
 export default function reduceForm<TValue>(state: FormStateRecord<TValue>, action: FormStateAction) {
